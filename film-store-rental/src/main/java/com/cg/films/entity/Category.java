@@ -31,6 +31,12 @@ public class Category {
                 .map(FilmCategory::getFilm)
                 .toList();
     }
+    
+
+    @ManyToMany(mappedBy = "categories")
+    @JsonIgnore
+    private List<Film> films;
+
 
 	public Long getCategoryId() {
 		return categoryId;
@@ -42,6 +48,10 @@ public class Category {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setFilms(List<Film> films) {
+		this.films = films;
 	}
 
 	public void setName(String name) {

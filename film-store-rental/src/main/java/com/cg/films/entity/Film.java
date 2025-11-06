@@ -46,6 +46,17 @@ public class Film {
     private List<Inventory> inventories;
     //end
     
+
+    @ManyToMany
+    @JsonIgnore
+    @JoinTable(
+        name = "FILM_CATEGORY",
+        joinColumns = @JoinColumn(name = "film_id"),
+        inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private List<Category> categories;
+
+    
 	public Long getFilmId() {
 		return filmId;
 	}
@@ -100,6 +111,22 @@ public class Film {
 
 	public void setFilmCategories(List<FilmCategory> filmCategories) {
 		this.filmCategories = filmCategories;
+	}
+
+	public List<Inventory> getInventories() {
+		return inventories;
+	}
+
+	public void setInventories(List<Inventory> inventories) {
+		this.inventories = inventories;
+	}
+
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	public Language getLanguage() {
