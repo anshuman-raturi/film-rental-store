@@ -1,7 +1,0 @@
-package com.cg.films.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import com.cg.films.entity.Film;
-
-public interface FilmRepository extends JpaRepository<Film, Long> {
-}
