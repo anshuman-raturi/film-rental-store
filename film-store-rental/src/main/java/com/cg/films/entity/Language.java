@@ -2,6 +2,8 @@ package com.cg.films.entity;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ public class Language {
     private Long languageId;
 
     private String name;
+    @JsonIgnore
     private Timestamp lastUpdate;
 	public Long getLanguageId() {
 		return languageId;
@@ -31,6 +34,7 @@ public class Language {
 	public void setName(String name) {
 		this.name = name;
 	}
+	@JsonIgnore
 	public Timestamp getLastUpdate() {
 		return lastUpdate;
 	}

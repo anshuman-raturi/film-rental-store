@@ -38,11 +38,13 @@ public class Film {
     //lavanya
     @ManyToOne
     @JoinColumn(name = "language_id")
+    @JsonIgnore
     private Language language;
     //end
     
     //anshuman
     @OneToMany(mappedBy = "film")
+    @JsonIgnore
     private List<Inventory> inventories;
     //end
     
