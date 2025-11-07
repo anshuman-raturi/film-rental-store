@@ -1,11 +1,4 @@
-# Hello API Project
+# Film Rental Store Project
 
-This is a Spring Boot project with multiple controllers, each returning "Hello <name>".
-
-## Endpoints
-- `/api/mufaddal/hello` → Hello Mufaddal
-
-
-## How to Run
-```bash
-mvn spring-boot:run
+ 
+This project aims to create a comprehensive and dynamic Film Rental  Store system, providing an immersive environment for users to interact  with the film rental business domain. The project involves developing a robust platform that efficiently manages the rental process, ensuring a seamless experience for both customers and the business.
