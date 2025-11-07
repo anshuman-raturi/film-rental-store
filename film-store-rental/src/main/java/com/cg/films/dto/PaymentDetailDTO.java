@@ -8,12 +8,6 @@ public class PaymentDetailDTO {
     private BigDecimal amount;
     private Timestamp paymentDate;
  
-//    public PaymentDetailDTO(Short paymentId, BigDecimal amount, LocalDateTime paymentDate) {
-//        this.paymentId = paymentId;
-//        this.amount = amount;
-//        this.paymentDate = paymentDate;
-//    }
- 
     public PaymentDetailDTO(Long paymentId, BigDecimal amount, Timestamp paymentDate) {
       this.paymentId = paymentId;
       this.amount = amount;
