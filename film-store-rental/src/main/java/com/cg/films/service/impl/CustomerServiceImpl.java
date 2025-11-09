@@ -11,6 +11,7 @@ import com.cg.films.dto.CustomerPaymentGroupDTO;
 import com.cg.films.dto.PaymentDetailDTO;
 import com.cg.films.entity.Customer;
 import com.cg.films.entity.Payment;
+import com.cg.films.exception.PaymentDetailsNotFoundException;
 import com.cg.films.repository.CustomerRepository;
 import com.cg.films.repository.PaymentRepository;
 import com.cg.films.service.CustomerService;
@@ -30,13 +31,12 @@ public class CustomerServiceImpl implements CustomerService {
             .map(c -> new CustomerNameDTO(c.getFirstName(), c.getLastName()))
             .collect(Collectors.toList());
     }
- 
     @Override
     public List<CustomerPaymentGroupDTO> getGroupedPaymentsByCustomerName(String firstName, String lastName) {
         List<Payment> payments = paymentRepository.findByCustomerFirstNameAndCustomerLastName(firstName, lastName);
  
         if (payments.isEmpty()) {
-            return List.of();
+            throw new PaymentDetailsNotFoundException(firstName, lastName);
         }
  
         Customer customer = payments.get(0).getCustomer();
