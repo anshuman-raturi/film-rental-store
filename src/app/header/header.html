@@ -1,0 +1,10 @@
+
+<p>Header works!</p>
+<p>From header child name is: {{ childname }}</p>
+<p>From Parent the name inside header child is: {{ parent }}</p>
+<p>Value coming from parent component for isParent is: {{ isParent }}</p>
+
+<div class="actions">
+  <button (click)="emitMessage()">Send Message to Parent (@Output)</button>
+  <button (click)="incrementAndEmit()">Increment Count & Emit (@Output)</button>
+</div>

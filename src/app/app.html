@@ -1,0 +1,41 @@
+<h1>Angular Combined Demo</h1>
+
+<!-- Parent-Child Demo -->
+<h2>Component Relationship Demo</h2>
+<app-header
+  [parent]="parentname"
+  [isParent]="isParent"
+  (messageChange)="onMessageChange($event)"
+  (countChange)="onCountChange($event)">
+</app-header>
+
+<div class="panel">
+  <h3>Data Received from Child</h3>
+  <p><strong>Via @Output:</strong> Message: {{ messageFromChildViaOutput }} | Count: {{ countFromChildViaOutput }}</p>
+  <p><strong>Via @ViewChild:</strong> Message: {{ messageFromChildViaViewChild }} | Count: {{ countFromChildViaViewChild }}</p>
+</div>
+
+<hr>
+
+<!-- Employee Lifecycle Demo -->
+<h2>Employee Lifecycle Demo</h2>
+<app-employee-profile [employeeName]="'Alice'" [employeeRole]="'Manager'" [employeeSalary]="75000"></app-employee-profile>
+
+<hr>
+
+<!-- Pipes Demo -->
+<h2>Angular Pipes Demo</h2>
+<app-pipes-demo></app-pipes-demo>
+<hr>
+
+<!-- Profile Component Demo -->
+<h2>Profile Component Demo</h2>
+<div>
+  <button class="btn" (click)="changeProfileName()">Change Profile Name</button>
+  <button class="btn" (click)="toggleProfile()">Toggle Profile Component</button>
+</div>
+<div *ngIf="showProfile">
+  <app-profile [profileName]="profileName"></app-profile>
+</div>
+
+<hr>

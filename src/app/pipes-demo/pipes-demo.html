@@ -1,0 +1,49 @@
+
+<h3>Angular Pipes Demo</h3>
+
+<p>Todays Date: {{ today() | date }}</p>
+<p>Short format: {{ today() | date:'short' }}</p>
+<p>Medium format: {{ today() | date:'medium' }}</p>
+<p>Full format: {{ today() | date:'full' }}</p>
+
+<hr>
+
+<p>Employee Name uppercase: {{ employeeName | uppercase }}</p>
+<p>Employee Name lowercase: {{ employeeName | lowercase }}</p>
+<p>Employee Name titlecase: {{ employeeName | titlecase }}</p>
+
+<hr>
+
+<p>Employee Salary: {{ employeeSalary }}</p>
+<p>Salary in USD: {{ employeeSalary | currency:'USD':'symbol' }}</p>
+<p>Salary in EUR: {{ employeeSalary | currency:'EUR':'symbol' }}</p>
+
+<hr>
+
+<p>Company Details: {{ company | json }}</p>
+
+<hr>
+
+<p>Long Text: {{ longText }}</p>
+<p>Slice (0-20): {{ longText | slice:0:20 }}</p>
+
+<hr>
+
+<p>Promise Example: {{ myPromise | async }}</p>
+<p>Observable Example: {{ myObservable | async }}</p>
+
+<hr>
+
+<p>Fruits: {{ fruits }}</p>
+<p>Filtered Fruits (>4 chars): {{ fruits | customPipe:4 }}</p>
+<ul>
+  @for (fruit of fruits | customPipe:4; track fruit) {
+    <li>{{ fruit }}</li>
+  }
+</ul>
+<p>Fruits starting with 'b': {{ fruits | startsWithB }}</p>
+
+<hr>
+
+<p>Chaining Pipes: {{ employeeName | uppercase | slice:0:5 }}</p>
+<p>Chaining Pipes with Currency: {{ employeeSalary | currency:'USD':'symbol' | slice:0:5 }}</p>
